@@ -1,46 +1,73 @@
-# Machine Learning Midterm
+# Machine Learning Midterm Project
 
-In this assignment, I experimented with machine learning models using two different datasets: **Breast Cancer** and **Wine**. My objective was to compare the performance of various models and examine whether data scaling influences the results.
+## About the Project
 
-## What I did:
+In this project, I worked with two datasets: Breast Cancer Wisconsin and Wine Classification. I compared different machine learning models and checked how feature scaling affected the results.
 
-- Explored the datasets and generated visualizations.
+## Datasets
+
+I used two datasets from scikit-learn:
+
+- **Breast Cancer Wisconsin:** 569 samples, 30 features, 2 classes.
+- **Wine Classification:** 178 samples, 13 features, 3 classes.
+
+## What I Did
+
+- Checked missing values, duplicates, and possible outliers.
+- Created class distribution graphs, correlation heatmaps, and boxplots.
 - Split the data into training, validation, and test sets.
-- Tested Decision Tree, KNN, and Gaussian Naive Bayes models.
-- Compared model performance using both raw and scaled data.
-- Performed clustering using K-Means.
-- Saved the results into tables and CSV files.
+- Compared original features with StandardScaler features.
+- Trained Decision Tree, KNN, and Gaussian Naive Bayes models.
+- Compared models using validation metrics.
+- Evaluated the selected models on the test sets.
+- Tested K-Means clustering with scaled and unscaled data.
+- Saved the results in CSV files and figures.
 
-## Files
+## Main Results
 
-- `breast_cancer.ipynb`: Procedures applied to the Breast Cancer dataset.
-- `wine.ipynb`: Procedures applied to the Wine dataset, including combined results for both datasets.
-- `figures/`: 18 visualizations generated during the study.
-- `classifier_runs.csv`, `classifier_summary.csv`, `classifier_test.csv`: Classification results.
-- `kmeans_runs.csv`, `kmeans_summary.csv`, `kmeans_test.csv`: K-Means clustering results.
-- `report.docx`: Assignment report.
-- `requirements.txt`: Required Python libraries.
-- `AI_DISCLOSURE.md`: Disclosure regarding the use of artificial intelligence.
+| Dataset | Best Classifier | Test Accuracy | Macro F1 |
+|---|---|---|---|
+| Breast Cancer | Scaled KNN (k=7) | 0.974 | 0.971 |
+| Wine | Scaled KNN (k=11) | 1.000 | 1.000 |
 
-## How to run:
+Feature scaling was especially useful for KNN and K-Means.
 
-You must have Python and Jupyter installed on your computer. The files can also be opened using VS Code. First, install the necessary libraries in your terminal:
+## Project Files
 
-```bash
-pip install -r requirements.txt
-```
+- `breast_cancer.ipynb` — Breast Cancer notebook
+- `wine.ipynb` — Wine notebook
+- `report.docx` — English project report
+- `figures/` — Saved graphs
+- `classifier_runs.csv`
+- `classifier_summary.csv`
+- `classifier_test.csv`
+- `kmeans_runs.csv`
+- `kmeans_summary.csv`
+- `kmeans_test.csv`
+- `requirements.txt` — Python package dependencies
+- `AI_DISCLOSURE.md` — AI usage information
 
-Then, open the notebooks in the following order and select **Run All**:
+## How to Run
 
-1. `breast_cancer.ipynb`
-2. `wine.ipynb`
+1. Install Python and the packages listed in `requirements.txt`.
+2. Open the project folder in VS Code or Jupyter Notebook.
+3. Install the dependencies:
 
-**Important:** Both notebooks must be in the same folder. Since the results from both datasets are combined in the final section of the Wine notebook, the Breast Cancer notebook must be executed first.
+   `pip install -r requirements.txt`
 
-## Summary of results
+4. Run all cells in `breast_cancer.ipynb`.
+5. Run all cells in `wine.ipynb`.
 
-For the Breast Cancer dataset, the best result was achieved using scaled **KNN (k=7)**, with a test F1 score of approximately **0.971**.
+The Wine notebook also creates the combined result CSV files.
 
-For the Wine dataset, the best result was achieved using scaled **KNN (k=11)**, with a test F1 score of **1.000**.
+## GitHub Repository
 
-In this study, I observed that feature scaling is particularly important for KNN and K-Means. More detailed results can be found in the notebook files and the report.
+https://github.com/emrebeyaziit/machine-learning-midterm
+
+## Video Presentation
+
+https://youtu.be/4J05ROaqaso
+
+## Conclusion
+
+In this project, scaled KNN gave the best classification results for both datasets. Scaling also improved K-Means clustering results, especially for the Wine dataset.
